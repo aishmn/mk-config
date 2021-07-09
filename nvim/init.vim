@@ -81,7 +81,8 @@ set encoding=utf-8
 set textwidth=0
 set hidden
 set title
-
+set number relativenumber
+set nu rnu 
 """ Coloring
 
 " Functions and autocmds to run whenever changing colorschemes
@@ -156,6 +157,9 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " TagBar
 let g:tagbar_width = 30
+
+
+
 
 " fzf-vim
 let g:fzf_action = {
@@ -367,8 +371,8 @@ nmap <leader>p <Plug>(pydocstring)
 xmap <leader>a gaip*
 nmap <leader>a gaip*
 nmap <leader>s :Rg<CR>
-nmap <leader>d :Files<CR>
-nmap <leader>f :BLines<CR>
+nmap <leader>f :GFiles<CR>
+nmap <leader>d :BLines<CR>
 nmap <leader>g :Goyo<CR>
 nmap <leader>h :RainbowParentheses!!<CR>
 nmap <leader>j :set filetype=journal<CR>
@@ -379,3 +383,8 @@ autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yap
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+nnoremap <c-s> :w<CR>
+inoremap <c-s> <Esc>:w<CR>
+vnoremap <c-s> <Esc>:w<CR>
+
+
